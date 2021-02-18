@@ -1,0 +1,23 @@
+.publicar {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 2;
+    padding: 5px 20px;
+}
+
+article {
+    border: 1px solid gainsboro;
+    margin: 5px;
+    padding: 0;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.float-end {
+    margin-left: auto;
+    position: relative;
+    float: right;
+}
