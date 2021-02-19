@@ -1,23 +1,32 @@
-<form>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="mb-3">
     <div class="mb-3">
       <label class="form-label">Título</label>
-      <input type="text" class="form-control" >
+      <input type="text" class="form-control" formControlName="titulo">
     </div>
     <div class="mb-3">
         <label class="form-label">Texto</label>
-        <textarea class="form-control"></textarea>
-      </div>
+        <textarea class="form-control" formControlName="texto"></textarea >
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Imagen</label>
+      <input type="text" class="form-control" formControlName="imagen">
+    </div>
     <div class="mb-3">
         <label class="form-label">Autor</label>
-        <input type="text" class="form-control" >
+        <input type="text" class="form-control" formControlName="autor" >
     </div>
-    <select class="form-select" aria-label="Default select example">
-        <option selected>Categoría</option>
+    <div class="mb-3">
+      <label class="form-label">Categoría</label>
+    <select class="form-select form-control" formControlName="categoria">
+      
         <option value="1">Política</option>
         <option value="2">Deporte</option>
         <option value="3">Sociedad</option>
       </select>
+    </div>
+    <input formControlName="fecha" value="{{fecha}}">
       <hr>
     <button type="submit" class="btn btn-primary">Publicar</button>
+    <a class="right" [routerLink]='["../blog"]'>Ver publicaciones</a>
 </form>
 
