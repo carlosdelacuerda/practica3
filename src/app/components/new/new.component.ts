@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl , FormGroup } from '@angular/forms';
-import { from } from 'rxjs';
-import { post } from 'src/app/post.interface';
+import { PostsService } from 'src/app/posts.service';
 
 @Component({
   selector: 'app-new',
@@ -10,12 +9,19 @@ import { post } from 'src/app/post.interface';
 })
 export class NewComponent implements OnInit {
 
-  fecha: Date;
+
   formulario: FormGroup;
+  
+  fecha: Date;
+  
  
-  constructor() { 
+  
+  constructor(private postService: PostsService) 
+    { 
     
-    this.fecha = new Date();
+      // {{ fechaActual | date:'dd/MM/yyyy HH:mm.ss' }}
+
+    this.fecha = new Date;
 
     this.formulario = new FormGroup({
       titulo: new FormControl(),
@@ -23,18 +29,19 @@ export class NewComponent implements OnInit {
       imagen: new FormControl(),
       autor: new FormControl(),
       categoria: new FormControl(),
-      fecha: new FormControl()
+      fecha: new FormControl(this.fecha)
     })
   }
 
   ngOnInit(): void {
-    
+   
   }
 
-  onSubmit() {
-    this.fecha = new Date()
-    console.log(this.fecha)
-    console.log(this.formulario.value)
+  async onSubmit() {
+    const nuevoArr = await this.postService.add(this.formulario.value);
+    this.formulario.reset();
+    
+
   }
 
 }
