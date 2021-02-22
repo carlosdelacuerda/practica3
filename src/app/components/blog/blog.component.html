@@ -1,5 +1,14 @@
 
 <main>
+    <div class="mb-3">
+      <label class="form-label">Categoría</label>
+      <select class="form-select form-control" (change)="change()" >
+            <option value="todas">Todas</option>
+            <option value="politica">Política</option>
+            <option value="deporte">Deporte</option>
+            <option value="sociedad">Sociedad</option>
+        </select>
+      </div>
     <article class="col-md-3" *ngFor="let show of lista">
         <h3 class="col-md-12 text-center pt-1">{{ show.titulo }}</h3>
         <figure>

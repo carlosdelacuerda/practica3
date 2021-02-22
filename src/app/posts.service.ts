@@ -16,11 +16,11 @@ export class PostsService {
   constructor() { 
     this.listaPosts = [
       {titulo: 'hola',
-      texto: 'que tal',
+      texto: 'lorem impsu, que tal lorem impsu, que tal lorem impsu, que tal lorem impsu, que tal lorem impsu, que tal',
       autor: 'yo mismo',
       imagen: 'https://i.pinimg.com/736x/c3/8f/c7/c38fc74a67cf024cc0e07bef37c9baa5.jpg',
       fecha: '10/10/10',
-      categoria: 'uno'}
+      categoria: 'deporte'}
     ]
   }
 
